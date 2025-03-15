@@ -1,14 +1,20 @@
-import {View, Text, StyleSheet} from "react-native"
+import {View, Text, StyleSheet, Alert} from "react-native"
 import { Button } from "../components/button"
 
 export default function Index(){
+    function handleMessage(){
+        const name = "Caique"
+        Alert.alert(`Seja bem vindo ${name}`)
+    }
+
     return(
         <View style={styles.container}>
             <Text>
                 Olá, Caique!
             </Text>
 
-            <Button />
+            <Button title="Entrar" onPress={handleMessage} />
+            <Button title="Cadastrar" />
         </View>
     )
 }
