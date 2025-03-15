@@ -1,9 +1,12 @@
 import {View, Text, StyleSheet, Alert} from "react-native"
+import { useState } from "react"
 
 import { Button } from "../components/button"
 import { Input } from "../components/inputs"
 
 export default function Index(){
+    const [name, setName] = useState("Sr(a).")
+
     function handleMessage(){
         const name = "Caique"
         Alert.alert(`Seja bem vindo ${name}`)
@@ -11,9 +14,9 @@ export default function Index(){
 
     return(
         <View style={styles.container}>
-            <Text style={styles.title}>Olá,</Text>
+            <Text style={styles.title}>Olá, {name}</Text>
 
-            <Input />
+            <Input onChangeText={setName} />
 
             <Button title="Entrar" onPress={handleMessage} />
 
