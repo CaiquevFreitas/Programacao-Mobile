@@ -1,5 +1,7 @@
 import {View, Text, StyleSheet, Alert} from "react-native"
+
 import { Button } from "../components/button"
+import { Input } from "../components/inputs"
 
 export default function Index(){
     function handleMessage(){
@@ -9,12 +11,12 @@ export default function Index(){
 
     return(
         <View style={styles.container}>
-            <Text>
-                Olá, Caique!
-            </Text>
+            <Text style={styles.title}>Olá,</Text>
+
+            <Input />
 
             <Button title="Entrar" onPress={handleMessage} />
-            <Button title="Cadastrar" />
+
         </View>
     )
 }
@@ -26,4 +28,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         gap: 16
     },
+    title:{
+        fontSize: 30,
+        color: "#187378"
+    }
 })
