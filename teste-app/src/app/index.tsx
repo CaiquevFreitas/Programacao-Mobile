@@ -1,5 +1,6 @@
-import {View, Text, StyleSheet, Alert} from "react-native"
+import {View, Text, StyleSheet} from "react-native"
 import { useState } from "react"
+import { router } from "expo-router"
 
 import { Button } from "../components/button"
 import { Input } from "../components/inputs"
@@ -7,9 +8,8 @@ import { Input } from "../components/inputs"
 export default function Index(){
     const [name, setName] = useState("Sr(a).")
 
-    function handleMessage(){
-        const name = "Caique"
-        Alert.alert(`Seja bem vindo ${name}`)
+    function handleNext(){
+        router.navigate("/dashboard")
     }
 
     return(
@@ -18,7 +18,7 @@ export default function Index(){
 
             <Input onChangeText={setName} />
 
-            <Button title="Entrar" onPress={handleMessage} />
+            <Button title="Entrar" onPress={handleNext} />
 
         </View>
     )
